@@ -381,39 +381,22 @@ summary {
 <li>The analysis for <a href="SaturdayAnalysis.md">Saturday is available here</a>.</li>
 <li>The analysis for <a href="SundayAnalysis.md">Sunday is available here</a>.</li>
 </ul>
-<!-- end list -->
-<pre class="r"><code>#Packages Needed
+</div>
+<div id="packages-needed" class="section level1">
+<h1>Packages Needed</h1>
+<p>The packages needed for the analysis and automation of reports are + tidyverse + rmarkdown + knitr + tidyr + caret + ggplot2 + corrplot</p>
+<pre class="r"><code>#Packages needed for the automation and analysis
 
-library(tidyverse)</code></pre>
-<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.3
-
-## -- Attaching packages ------------------------------------------- tidyverse 1.3.0 --
-
-## v ggplot2 3.3.2     v purrr   0.3.3
-## v tibble  3.0.0     v dplyr   0.8.5
-## v tidyr   1.0.2     v stringr 1.4.0
-## v readr   1.3.1     v forcats 0.5.0
-
-## Warning: package &#39;ggplot2&#39; was built under R version 3.6.3
-
-## Warning: package &#39;tibble&#39; was built under R version 3.6.3
-
-## Warning: package &#39;tidyr&#39; was built under R version 3.6.3
-
-## Warning: package &#39;readr&#39; was built under R version 3.6.3
-
-## Warning: package &#39;purrr&#39; was built under R version 3.6.3
-
-## Warning: package &#39;dplyr&#39; was built under R version 3.6.3
-
-## Warning: package &#39;forcats&#39; was built under R version 3.6.3
-
-## -- Conflicts ---------------------------------------------- tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>library(rmarkdown)
-library(knitr)</code></pre>
-<pre><code>## Warning: package &#39;knitr&#39; was built under R version 3.6.3</code></pre>
+library(tidyverse)
+library(rmarkdown)
+library(knitr)
+library(tidyr)
+library(caret)
+library(ggplot2)
+library(corrplot)</code></pre>
+</div>
+<div id="automate-creation-of-reports" class="section level1">
+<h1>Automate creation of reports</h1>
 <pre class="r"><code>#Create output file names
 
 daynames &lt;- c(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;)
@@ -443,8 +426,10 @@ apply(reports, MARGIN = 1,
 ## 
 ##   |                                                                              |......                                                                |   9%
 ## label: unnamed-chunk-1 (with options) 
-## List of 1
+## List of 3
 ##  $ include: logi FALSE
+##  $ warning: logi FALSE
+##  $ message: logi FALSE
 ## 
 ##   |                                                                              |..........                                                            |  14%
 ##   ordinary text without R code
@@ -463,10 +448,6 @@ apply(reports, MARGIN = 1,
 ## List of 2
 ##  $ warning: logi FALSE
 ##  $ message: logi FALSE
-
-## Warning: package &#39;caret&#39; was built under R version 3.6.3
-
-## Warning: package &#39;corrplot&#39; was built under R version 3.6.3
 
 ## Parsed with column specification:
 ## cols(
@@ -515,34 +496,3272 @@ apply(reports, MARGIN = 1,
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |...................................................                   |  73%
-## label: unnamed-chunk-8 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-8
+
 ##   |                                                                              |......................................................                |  77%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |.........................................................             |  82%
 ## label: unnamed-chunk-9 (with options) 
-## List of 2
-##  $ verbose: logi FALSE
-##  $ eval   : logi FALSE
-## 
+## List of 1
+##  $ warning: logi FALSE
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
 ##   |                                                                              |............................................................          |  86%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |................................................................      |  91%
-## label: unnamed-chunk-10 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-10
 ##   |                                                                              |...................................................................   |  95%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |......................................................................| 100%
-## label: unnamed-chunk-11 (with options) 
-## List of 1
-##  $ eval: logi FALSE
+## label: unnamed-chunk-11
 
 ## output file: Project-2.knit.md
 
@@ -550,7 +3769,7 @@ apply(reports, MARGIN = 1,
 ## &quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS SundayAnalysis.md --to html4 --from gfm --output SundayAnalysis.html --standalone --self-contained --highlight-style pygments --template &quot;C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\preview.html&quot; --variable &quot;github-markdown-css:C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\github.css&quot; --email-obfuscation none --metadata pagetitle=PREVIEW
 
 ## 
-## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-4fe426c22dad.html
+## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-339c7dbf5776.html
 
 ## 
 ## Output created: SundayAnalysis.md
@@ -564,8 +3783,10 @@ apply(reports, MARGIN = 1,
 ## 
 ##   |                                                                              |......                                                                |   9%
 ## label: unnamed-chunk-1 (with options) 
-## List of 1
+## List of 3
 ##  $ include: logi FALSE
+##  $ warning: logi FALSE
+##  $ message: logi FALSE
 ## 
 ##   |                                                                              |..........                                                            |  14%
 ##   ordinary text without R code
@@ -632,34 +3853,1649 @@ apply(reports, MARGIN = 1,
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |...................................................                   |  73%
-## label: unnamed-chunk-8 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-8
+
 ##   |                                                                              |......................................................                |  77%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |.........................................................             |  82%
 ## label: unnamed-chunk-9 (with options) 
-## List of 2
-##  $ verbose: logi FALSE
-##  $ eval   : logi FALSE
-## 
+## List of 1
+##  $ warning: logi FALSE
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
 ##   |                                                                              |............................................................          |  86%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |................................................................      |  91%
-## label: unnamed-chunk-10 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-10
 ##   |                                                                              |...................................................................   |  95%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |......................................................................| 100%
-## label: unnamed-chunk-11 (with options) 
-## List of 1
-##  $ eval: logi FALSE
+## label: unnamed-chunk-11
 
 ## output file: Project-2.knit.md
 
@@ -667,7 +5503,7 @@ apply(reports, MARGIN = 1,
 ## &quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS MondayAnalysis.md --to html4 --from gfm --output MondayAnalysis.html --standalone --self-contained --highlight-style pygments --template &quot;C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\preview.html&quot; --variable &quot;github-markdown-css:C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\github.css&quot; --email-obfuscation none --metadata pagetitle=PREVIEW
 
 ## 
-## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-4fe45b1a444b.html
+## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-339c6fe85d17.html
 
 ## 
 ## Output created: MondayAnalysis.md
@@ -681,8 +5517,10 @@ apply(reports, MARGIN = 1,
 ## 
 ##   |                                                                              |......                                                                |   9%
 ## label: unnamed-chunk-1 (with options) 
-## List of 1
+## List of 3
 ##  $ include: logi FALSE
+##  $ warning: logi FALSE
+##  $ message: logi FALSE
 ## 
 ##   |                                                                              |..........                                                            |  14%
 ##   ordinary text without R code
@@ -749,34 +5587,1649 @@ apply(reports, MARGIN = 1,
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |...................................................                   |  73%
-## label: unnamed-chunk-8 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-8
+
 ##   |                                                                              |......................................................                |  77%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |.........................................................             |  82%
 ## label: unnamed-chunk-9 (with options) 
-## List of 2
-##  $ verbose: logi FALSE
-##  $ eval   : logi FALSE
-## 
+## List of 1
+##  $ warning: logi FALSE
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
 ##   |                                                                              |............................................................          |  86%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |................................................................      |  91%
-## label: unnamed-chunk-10 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-10
 ##   |                                                                              |...................................................................   |  95%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |......................................................................| 100%
-## label: unnamed-chunk-11 (with options) 
-## List of 1
-##  $ eval: logi FALSE
+## label: unnamed-chunk-11
 
 ## output file: Project-2.knit.md
 
@@ -784,7 +7237,7 @@ apply(reports, MARGIN = 1,
 ## &quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS TuesdayAnalysis.md --to html4 --from gfm --output TuesdayAnalysis.html --standalone --self-contained --highlight-style pygments --template &quot;C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\preview.html&quot; --variable &quot;github-markdown-css:C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\github.css&quot; --email-obfuscation none --metadata pagetitle=PREVIEW
 
 ## 
-## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-4fe46eb42c9.html
+## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-339c78dc251.html
 
 ## 
 ## Output created: TuesdayAnalysis.md
@@ -798,8 +7251,10 @@ apply(reports, MARGIN = 1,
 ## 
 ##   |                                                                              |......                                                                |   9%
 ## label: unnamed-chunk-1 (with options) 
-## List of 1
+## List of 3
 ##  $ include: logi FALSE
+##  $ warning: logi FALSE
+##  $ message: logi FALSE
 ## 
 ##   |                                                                              |..........                                                            |  14%
 ##   ordinary text without R code
@@ -866,34 +7321,1649 @@ apply(reports, MARGIN = 1,
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |...................................................                   |  73%
-## label: unnamed-chunk-8 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-8
+
 ##   |                                                                              |......................................................                |  77%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |.........................................................             |  82%
 ## label: unnamed-chunk-9 (with options) 
-## List of 2
-##  $ verbose: logi FALSE
-##  $ eval   : logi FALSE
-## 
+## List of 1
+##  $ warning: logi FALSE
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
 ##   |                                                                              |............................................................          |  86%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |................................................................      |  91%
-## label: unnamed-chunk-10 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-10
 ##   |                                                                              |...................................................................   |  95%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |......................................................................| 100%
-## label: unnamed-chunk-11 (with options) 
-## List of 1
-##  $ eval: logi FALSE
+## label: unnamed-chunk-11
 
 ## output file: Project-2.knit.md
 
@@ -901,7 +8971,7 @@ apply(reports, MARGIN = 1,
 ## &quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS WednesdayAnalysis.md --to html4 --from gfm --output WednesdayAnalysis.html --standalone --self-contained --highlight-style pygments --template &quot;C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\preview.html&quot; --variable &quot;github-markdown-css:C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\github.css&quot; --email-obfuscation none --metadata pagetitle=PREVIEW
 
 ## 
-## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-4fe45ef561db.html
+## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-339c78d43ce6.html
 
 ## 
 ## Output created: WednesdayAnalysis.md
@@ -915,8 +8985,10 @@ apply(reports, MARGIN = 1,
 ## 
 ##   |                                                                              |......                                                                |   9%
 ## label: unnamed-chunk-1 (with options) 
-## List of 1
+## List of 3
 ##  $ include: logi FALSE
+##  $ warning: logi FALSE
+##  $ message: logi FALSE
 ## 
 ##   |                                                                              |..........                                                            |  14%
 ##   ordinary text without R code
@@ -983,34 +9055,1649 @@ apply(reports, MARGIN = 1,
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |...................................................                   |  73%
-## label: unnamed-chunk-8 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-8
+
 ##   |                                                                              |......................................................                |  77%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |.........................................................             |  82%
 ## label: unnamed-chunk-9 (with options) 
-## List of 2
-##  $ verbose: logi FALSE
-##  $ eval   : logi FALSE
-## 
+## List of 1
+##  $ warning: logi FALSE
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
 ##   |                                                                              |............................................................          |  86%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |................................................................      |  91%
-## label: unnamed-chunk-10 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-10
 ##   |                                                                              |...................................................................   |  95%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |......................................................................| 100%
-## label: unnamed-chunk-11 (with options) 
-## List of 1
-##  $ eval: logi FALSE
+## label: unnamed-chunk-11
 
 ## output file: Project-2.knit.md
 
@@ -1018,7 +10705,7 @@ apply(reports, MARGIN = 1,
 ## &quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS ThursdayAnalysis.md --to html4 --from gfm --output ThursdayAnalysis.html --standalone --self-contained --highlight-style pygments --template &quot;C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\preview.html&quot; --variable &quot;github-markdown-css:C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\github.css&quot; --email-obfuscation none --metadata pagetitle=PREVIEW
 
 ## 
-## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-4fe43a15499.html
+## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-339c6cd35ac.html
 
 ## 
 ## Output created: ThursdayAnalysis.md
@@ -1032,8 +10719,10 @@ apply(reports, MARGIN = 1,
 ## 
 ##   |                                                                              |......                                                                |   9%
 ## label: unnamed-chunk-1 (with options) 
-## List of 1
+## List of 3
 ##  $ include: logi FALSE
+##  $ warning: logi FALSE
+##  $ message: logi FALSE
 ## 
 ##   |                                                                              |..........                                                            |  14%
 ##   ordinary text without R code
@@ -1100,34 +10789,1649 @@ apply(reports, MARGIN = 1,
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |...................................................                   |  73%
-## label: unnamed-chunk-8 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-8
+
 ##   |                                                                              |......................................................                |  77%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |.........................................................             |  82%
 ## label: unnamed-chunk-9 (with options) 
-## List of 2
-##  $ verbose: logi FALSE
-##  $ eval   : logi FALSE
-## 
+## List of 1
+##  $ warning: logi FALSE
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
 ##   |                                                                              |............................................................          |  86%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |................................................................      |  91%
-## label: unnamed-chunk-10 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-10
 ##   |                                                                              |...................................................................   |  95%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |......................................................................| 100%
-## label: unnamed-chunk-11 (with options) 
-## List of 1
-##  $ eval: logi FALSE
+## label: unnamed-chunk-11
 
 ## output file: Project-2.knit.md
 
@@ -1135,7 +12439,7 @@ apply(reports, MARGIN = 1,
 ## &quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS FridayAnalysis.md --to html4 --from gfm --output FridayAnalysis.html --standalone --self-contained --highlight-style pygments --template &quot;C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\preview.html&quot; --variable &quot;github-markdown-css:C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\github.css&quot; --email-obfuscation none --metadata pagetitle=PREVIEW
 
 ## 
-## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-4fe438a23000.html
+## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-339c3c085a0d.html
 
 ## 
 ## Output created: FridayAnalysis.md
@@ -1149,8 +12453,10 @@ apply(reports, MARGIN = 1,
 ## 
 ##   |                                                                              |......                                                                |   9%
 ## label: unnamed-chunk-1 (with options) 
-## List of 1
+## List of 3
 ##  $ include: logi FALSE
+##  $ warning: logi FALSE
+##  $ message: logi FALSE
 ## 
 ##   |                                                                              |..........                                                            |  14%
 ##   ordinary text without R code
@@ -1217,34 +12523,3272 @@ apply(reports, MARGIN = 1,
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |...................................................                   |  73%
-## label: unnamed-chunk-8 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-8
+
 ##   |                                                                              |......................................................                |  77%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |.........................................................             |  82%
 ## label: unnamed-chunk-9 (with options) 
-## List of 2
-##  $ verbose: logi FALSE
-##  $ eval   : logi FALSE
-## 
+## List of 1
+##  $ warning: logi FALSE
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 5: holiday has no variation.
+
+## Warning in (function (x, y, offset = NULL, misc = NULL, distribution =
+## &quot;bernoulli&quot;, : variable 6: weekday has no variation.
+
 ##   |                                                                              |............................................................          |  86%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |................................................................      |  91%
-## label: unnamed-chunk-10 (with options) 
-## List of 1
-##  $ eval: logi FALSE
-## 
+## label: unnamed-chunk-10
 ##   |                                                                              |...................................................................   |  95%
 ##   ordinary text without R code
 ## 
 ##   |                                                                              |......................................................................| 100%
-## label: unnamed-chunk-11 (with options) 
-## List of 1
-##  $ eval: logi FALSE
+## label: unnamed-chunk-11
 
 ## output file: Project-2.knit.md
 
@@ -1252,7 +15796,7 @@ apply(reports, MARGIN = 1,
 ## &quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS SaturdayAnalysis.md --to html4 --from gfm --output SaturdayAnalysis.html --standalone --self-contained --highlight-style pygments --template &quot;C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\preview.html&quot; --variable &quot;github-markdown-css:C:\Users\laura\OneDrive\Documents\R\win-library\3.6\rmarkdown\rmarkdown\templates\github_document\resources\github.css&quot; --email-obfuscation none --metadata pagetitle=PREVIEW
 
 ## 
-## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-4fe426fb526e.html
+## Preview created: C:\Users\laura\AppData\Local\Temp\RtmpKAhwNZ\preview-339cf893d88.html
 
 ## 
 ## Output created: SaturdayAnalysis.md

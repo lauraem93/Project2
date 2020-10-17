@@ -3,11 +3,6 @@ Project 2
 Laura Mathews
 10/12/2020
 
-# Questions:
-
-README file - do we create this in r or directly in github - separate
-file automating rmarkdown - parameters
-
 # Packages Needed
 
 ``` r
@@ -19,6 +14,45 @@ library(corrplot)
 ```
 
 # Introduction
+
+The data analyzed in this project involves bike sharing systems which
+allow people to rent and return bikes at different locations throughout
+the city. The data set contains variables about date/time and weather
+along with the count of bikes rented. The data spans multiple bike
+systems, therefore there are multiple observations for each date. The
+variables used in this project analysis are as follows:
+
+  - yr: year
+      - 0: 2011
+      - 1: 2012
+  - mnth: month, 1-12
+  - season:
+      - 1: winter
+      - 2: spring
+      - 3: summer
+      - 4: fall
+  - hr: hour, 0-23
+  - holiday, whether or not the day is a holiday
+      - 0: non-holiday
+      - 1: holiday
+  - weekday: day of the week, 0-6
+  - weathersit: kind of weather
+      - 1: Clear, Few clouds, Partly cloudy, Partly cloudy
+      - 2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist
+      - 3: Light Snow, Light Rain + Thunderstorm + Scattered clouds,
+        Light Rain + Scattered clouds
+      - 4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog
+  - temp: temperature, normalized temperature in Celsius, normalized by
+    temp/max temp
+  - hum: humidity, normalized by hum/max hum
+  - windspeed: wind speed, normalized by windspeed/max windspeed
+  - cnt: count of all bikes rented
+
+The purpose of the analysis is to create models to predict the count of
+bikes rented when given different situational variables. The data was
+first analyzed to see which variables were most relevent to the models.
+Models were made using a non-ensemble tree based method and boosted tree
+method.
 
 # Read in the Data
 
@@ -34,7 +68,7 @@ bikeData$casual <- bikeData$registered <- bikeData$workingday <- NULL
 
 # Filter the data for the correct day
 
-**don’t forget to take out day \<- 2**
+Filter the data only the desired day for the analysis.
 
 ``` r
 day <- params$day
@@ -46,17 +80,17 @@ bikeData <- filter(bikeData, weekday == day)
 
 # Summaries
 
-You should produce some basic (but meaningful) summary statistics and
-plots about the training data you are working with (especially as it
-relates to your response). The general things that the plots describe
-should be explained but, since we are going to automate things, there is
-no need to try and explain particular trends in the plots you see
-(unless you want to try and automate that too\!).
+Basic summary statistics and plots were created for the variables in the
+data set. The data used in this project spans many bike share systems,
+thus there are multiple observations for each date. Because the models
+will predict the number of bikes rented in a day in a single bike share
+system based on predictor variables, the summaries were produced using
+average count instead of total count.
 
 ## Count
 
-The minimum and maximum values and a histogram for count. A correlation
-plot of all variables in the abbreviated data set.
+The minimum and maximum values were found and a histogram for count was
+created.
 
 ``` r
 bikeSummary <- select(bikeData, dteday:holiday, weathersit:cnt)
@@ -80,24 +114,7 @@ g + geom_histogram(binwidth = 50, fill = "yellow", color = "black") + geom_densi
 
 ![](FridayAnalysis_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-``` r
-# Correlations and correlation plot
-
-correlations <- cor(select(bikeSummary, season:cnt))
-corrplot(correlations, type = "upper", tl.pos = "lt")
-corrplot(correlations, type = "lower", method = "number", add = TRUE, diag = FALSE, 
-    tl.pos = "n")
-```
-
-![](FridayAnalysis_files/figure-gfm/unnamed-chunk-5-2.png)<!-- -->
-
 ## Summaries for different variables
-
-???
-
-Because the final tree will be averaging the count over different
-variables, I chose to look at average count at each level of categorical
-variables.
 
 Holiday: Table of the average count on holidays and non holidays
 (non-holiday = 0, holiday = 1)
@@ -105,12 +122,23 @@ Holiday: Table of the average count on holidays and non holidays
 Date: Data analyzed by month and year. A bar chart of average count per
 month was created. The data was split up by year.
 
-Hour: A bar chart of average count for each hour was created.
+Hour: A bar plot of average count for each hour was created.
 
-Season: A bar chart of average count for each season and a box plot were
-created.
+Season: A bar chart of average count for each season was created.
 
-….. finish these variables: temp, humidity, windspeed, weather
+Temperature:A plot of average count vs normalized temperature with a
+linear regression line was created.
+
+Humidity: A plot of average count vs humidity with a linear regression
+line was created.
+
+Windspeed: A bar chart of average count by wind speed was created.
+
+Weather: A bar chart of average count for each weather condition was
+created. The weather conditions are: \* 1: Clear, Few clouds, Partly
+cloudy, Partly cloudy \* 2: Mist + Cloudy, Mist + Broken clouds, Mist +
+Few clouds, Mist \* 3: Light Snow, Light Rain + Thunderstorm + Scattered
+clouds, Light Rain + Scattered clouds \* 4: Heavy Rain + Ice Pallets
 
 ``` r
 # Holiday:
@@ -191,87 +219,71 @@ g + geom_bar(stat = "identity", fill = "green") + labs(x = "Season", title = "Ba
 ![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-3.png)<!-- -->
 
 ``` r
-# Create a box plot of count by season
+# Temperature:
 
-g <- ggplot(bikeSummary, aes(x = ssn, y = cnt))
-g + geom_boxplot(color = "blue") + labs(x = "Season", title = "Box Plot of Average Count per Season", 
-    y = "Count")
-```
+# Find average count for each normalized temperature value
 
-![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-4.png)<!-- -->
+cnt_temp <- bikeSummary %>% group_by(temp) %>% summarise(avg = mean(cnt))
 
-``` r
-# Temperature
+# Create a scatterplot of average count vs temperature and add a regression line
 
-g <- ggplot(bikeSummary, aes(x = temp, y = cnt))
-g + geom_point(color = "black", size = 1) + labs(x = "Standardized Temperature", 
-    title = "Count vs Temperature", y = "Count") + geom_point(aes(x = atemp), color = "grey", 
-    size = 1) + geom_smooth(aes(x = temp), color = "red") + geom_smooth(aes(x = atemp), 
-    color = "orange")
-```
-
-    ## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
-    ## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
-
-![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-5.png)<!-- -->
-
-``` r
-g <- ggplot(bikeSummary, aes(x = temp, y = cnt))
-g + geom_point(color = "black") + labs(x = "Standardized Temperature", title = "Count vs Temperature", 
-    y = "Count") + geom_smooth(color = "red")
-```
-
-    ## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
-
-![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-6.png)<!-- -->
-
-``` r
-# Humidity
-
-g <- ggplot(bikeSummary, aes(x = hum, y = cnt))
-g + geom_point() + geom_smooth()
-```
-
-    ## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
-
-![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-7.png)<!-- -->
-
-``` r
-# Wind Speed:
-
-cnt_wind <- bikeSummary %>% group_by(windspeed) %>% summarise(avg = mean(cnt))
-
-g <- ggplot(cnt_wind, aes(x = windspeed, y = avg))
-g + geom_bar(stat = "identity")
-```
-
-![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-8.png)<!-- -->
-
-``` r
-g + geom_point() + geom_smooth(method = glm)
+g <- ggplot(cnt_temp, aes(x = temp, y = avg))
+g + geom_point() + geom_smooth(method = lm, color = "orange") + labs(x = "Normalized Temperature", 
+    y = "Average Count", title = "Plot of Average Count vs Temperature")
 ```
 
     ## `geom_smooth()` using formula 'y ~ x'
 
-![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-9.png)<!-- -->
+![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-4.png)<!-- -->
 
 ``` r
-g <- ggplot(bikeSummary, aes(x = windspeed, y = cnt))
-g + geom_point() + geom_smooth()
+# Humidity:
+
+# Find average count for each normalized humidity value
+
+cnt_hum <- bikeSummary %>% group_by(hum) %>% summarise(avg = mean(cnt))
+
+# Create a scatterplot of average count vs humidity and add a regression line
+
+g <- ggplot(cnt_hum, aes(x = hum, y = avg))
+g + geom_point() + geom_smooth(method = lm) + labs(x = "Humidity", y = "Average Count", 
+    title = "Plot of Average Count vs Humidity")
 ```
 
-    ## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+    ## `geom_smooth()` using formula 'y ~ x'
 
-![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-10.png)<!-- -->
+![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-5.png)<!-- -->
+
+``` r
+# Wind Speed:
+
+# Find average count by wind speed
+
+cnt_wind <- bikeSummary %>% group_by(windspeed) %>% summarise(avg = mean(cnt))
+
+# Create a bar chart of average count by wind speed
+
+g <- ggplot(cnt_wind, aes(x = windspeed, y = avg))
+g + geom_bar(stat = "identity") + labs(x = "Wind Speed", y = "Average Count", title = "Bar Chart of Count by Wind Speed")
+```
+
+![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-6.png)<!-- -->
 
 ``` r
 # Weather:
 
-g <- ggplot(bikeSummary, aes(x = weather, y = cnt))
-g + geom_boxplot(color = "purple") + labs(x = "Weather", y = "Count", title = "Box Plot of Count by Weather")
+# Find average count by weather condition
+
+cnt_weather <- bikeSummary %>% group_by(weathersit) %>% summarise(avg = mean(cnt))
+
+# Create a bar chart of average count by weather condition
+
+g <- ggplot(cnt_weather, aes(x = weathersit, y = avg))
+g + geom_bar(stat = "identity", fill = "purple") + labs(x = "Weather", y = "Count", 
+    title = "Bar Chart of Count by Weather")
 ```
 
-![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-11.png)<!-- -->
+![](FridayAnalysis_files/figure-gfm/unnamed-chunk-6-7.png)<!-- -->
 
 # Create Train and Test Sets
 
@@ -281,7 +293,7 @@ testing sets with 70% of the data in the training set.
 ``` r
 # Remove unimportant variables
 
-bikeData <- select(bikeData, season:holiday, weathersit:cnt)
+bikeData$dteday <- bikeData$instant <- bikeData$atemp <- NULL
 
 # Create index of values for training set
 
@@ -298,6 +310,18 @@ bikeTest <- bikeData[-trainIndex, ]
 
 ## Tree Method
 
+The training data was used to fit a regression tree. For a regression
+tree, the predictor variables are split into different regions and a
+prediction is made based on these regions.
+
+An initial fit using the default parameter values (not included) was
+used to assess the best range for the cp parameter. The cp values tested
+in the fitting process were 0.01-0.15 by 0.01. Next the train()
+function, from the caret package, with method rpart was used to create
+the model. The best model was chosen using leave out one cross
+validation. This method was specified in the trControl argument in the
+train() function. The final regression tree was plotted.
+
 ``` r
 # Create a vector of cp values to test
 
@@ -311,30 +335,72 @@ tree <- train(cnt ~ ., data = bikeTrain, method = "rpart", trControl = trControl
     tuneGrid = data.frame(cp = cp_val))
 
 tree
+```
 
-plot(tree)
+    ## CART 
+    ## 
+    ## 1743 samples
+    ##   10 predictor
+    ## 
+    ## No pre-processing
+    ## Resampling: Leave-One-Out Cross-Validation 
+    ## Summary of sample sizes: 1742, 1742, 1742, 1742, 1742, 1742, ... 
+    ## Resampling results across tuning parameters:
+    ## 
+    ##   cp    RMSE       Rsquared   MAE     
+    ##   0.01   87.44458  0.7481860  60.72648
+    ##   0.02   95.72771  0.6982809  65.59418
+    ##   0.03  105.40135  0.6342006  71.01096
+    ##   0.04  115.31633  0.5621393  79.64760
+    ##   0.05  119.12248  0.5344643  82.29344
+    ##   0.06  121.43531  0.5144090  83.80360
+    ##   0.07  129.23962  0.4499580  89.99193
+    ##   0.08  129.23962  0.4499580  89.99193
+    ##   0.09  129.23962  0.4499580  89.99193
+    ##   0.10  129.23962  0.4499580  89.99193
+    ##   0.11  138.87370  0.3647501  97.33643
+    ##   0.12  138.87370  0.3647501  97.33643
+    ##   0.13  138.87370  0.3647501  97.33643
+    ##   0.14  138.87370  0.3647501  97.33643
+    ##   0.15  138.87370  0.3647501  97.33643
+    ## 
+    ## RMSE was used to select the optimal model using the smallest value.
+    ## The final value used for the model was cp = 0.01.
 
+``` r
 # Plot the final tree model
 
 plot(tree$finalModel)
 text(tree$finalModel)
-
-# Create a tree model with fewer variables. Use the same cp values
-
-tree2 <- train(cnt ~ mnth + yr + hr + weathersit + windspeed, data = bikeTrain, method = "rpart", 
-    trControl = trControl, tuneGrid = data.frame(cp = cp_val))
-
-tree2
-
-# Plot the 'reduced' tree model
-
-plot(tree2$finalModel)
-text(tree2$finalModel)
 ```
+
+![](FridayAnalysis_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+``` r
+# Chosen model parameter values
+
+res <- tree$results
+res <- res %>% filter(RMSE == min(RMSE)) %>% select(cp) %>% unlist()
+
+paste0("The best model had a cp value of ", res)
+```
+
+    ## [1] "The best model had a cp value of 0.01"
 
 ## Boosted Tree Method
 
-**are we supposed to try different parameter values**
+The training data was used to fit a boosted tree model. The boosted tree
+method is an ensemble learning method. For a boosted tree, the trees are
+grown sequentially. Each new tree is created by modifying the previous
+tree. The predictions are updated based on the most recent tree.
+
+Again, an initial fit using the default parameter values (not included)
+was used to assess the best range in which to test each parameter. Once
+an adequate range was determined, a data frame of each combination of
+the possible parameter values was created. The model was trained using
+the train() function with the gbm method. The tuneGrid argument was used
+to specify the parameter values to be tested. The best model was chosen
+using repeated 10 fold cross validation.
 
 ``` r
 # Create a grid of possible parameter values; interaction.depth, n.trees,
@@ -353,32 +419,70 @@ parameters <- expand.grid(interaction.depth = interaction.depth, n.trees = n.tre
 boost <- train(cnt ~ ., data = bikeTrain, method = "gbm", trControl = trainControl(method = "repeatedcv", 
     number = 10, repeats = 3), verbose = FALSE, tuneGrid = data.frame(parameters))
 
-boost
+# Display parameters used in the final model
+
+res <- boost$results
+res <- res %>% filter(RMSE == min(RMSE))
+
+paste0("The final model had parameter values of: shrinkage = ", unlist(select(res, 
+    shrinkage)), ", interaction depth = ", unlist(select(res, interaction.depth)), 
+    ", min obs in node = ", unlist(select(res, n.minobsinnode)), ", and number of trees = ", 
+    unlist(select(res, n.trees)), ".")
 ```
+
+    ## [1] "The final model had parameter values of: shrinkage = 0.1, interaction depth = 5, min obs in node = 15, and number of trees = 350."
 
 # Predict on Test Set
 
+The predict() function was used to predict count values from the test
+set. The predictions were analyzes useing postResample() to calculate
+RMSE, Rsquared, and MAE.
+
 ``` r
+# Predict test set values and analyze the predictions
+
 predTree <- predict(tree, newdata = bikeTest)
 treeRes <- postResample(predTree, bikeTest$cnt)
 predBoost <- predict(boost, newdata = bikeTest)
 boostRes <- postResample(predBoost, bikeTest$cnt)
-predTree2 <- predict(tree2, newdata = bikeTest)
-treeRes2 <- postResample(predTree2, bikeTest$cnt)
 
-modNames <- c("tree", "boosted")
-treeRes
-boostRes
-treeRes2
+# Display model fit statistics
+
+print("Tree fit statistics:")
 ```
 
+    ## [1] "Tree fit statistics:"
+
+``` r
+treeRes
+```
+
+    ##       RMSE   Rsquared        MAE 
+    ## 82.9633193  0.7724958 58.8079194
+
+``` r
+print("Boosted tree fit statistics")
+```
+
+    ## [1] "Boosted tree fit statistics"
+
+``` r
+boostRes
+```
+
+    ##       RMSE   Rsquared        MAE 
+    ## 42.9460005  0.9391199 28.3221956
+
 # Evaluate the Results
+
+The best model used to predict the test set count values was chosen by
+the smallest RMSE.
 
 ``` r
 # Put the model results into a data frame
 
-modNames <- c("tree", "boosted", "tree2")
-results <- rbind(treeRes, boostRes, treeRes2) %>% cbind(modNames) %>% data.frame(row.names = modNames)
+modNames <- c("tree", "boosted")
+results <- rbind(treeRes, boostRes) %>% cbind(modNames) %>% data.frame(row.names = modNames)
 
 # Determine the best model
 
@@ -390,3 +494,5 @@ bestModel <- results %>% filter(RMSE == min(RMSE)) %>% select(modNames) %>% unli
 
 paste0("The best model was the ", bestModel, " model.")
 ```
+
+    ## [1] "The best model was the boosted model."

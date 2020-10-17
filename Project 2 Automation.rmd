@@ -26,12 +26,32 @@ The purpose of this repository is to use two different tree models to predict bi
 + The analysis for [Saturday is available here](SaturdayAnalysis.md).
 + The analysis for [Sunday is available here](SundayAnalysis.md).
 
-```{r main-chunk}
-#Packages Needed
+# Packages Needed
+
+The packages needed for the analysis and automation of reports are
++ tidyverse
++ rmarkdown
++ knitr
++ tidyr
++ caret
++ ggplot2
++ corrplot
+
+```{r main-one, warning = FALSE, message = FALSE}
+#Packages needed for the automation and analysis
 
 library(tidyverse)
 library(rmarkdown)
 library(knitr)
+library(tidyr)
+library(caret)
+library(ggplot2)
+library(corrplot)
+```
+
+# Automate creation of reports
+
+```{r main-two}
 
 #Create output file names
 
