@@ -10,7 +10,7 @@ predict bike useage count for each day of the week. Data on bike sharing
 was analyzed to create the models. The reports for each week were then
 automated.
 
-  - The analysis for [Monday is available here](MondayAnalysis.md).
+  - The analysis for [Monday is available here](MondayAnalysis).
   - The analysis for [Tuesday is available here](TuesdayAnalysis.md).
   - The analysis for [Wednesday is available
     here](WednesdayAnalysis.md).
