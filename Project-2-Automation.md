@@ -10,14 +10,14 @@ predict bike useage count for each day of the week. Data on bike sharing
 was analyzed to create the models. The reports for each week were then
 automated.
 
-  - The analysis for [Monday is available here](MondayAnalysis).
-  - The analysis for [Tuesday is available here](TuesdayAnalysis.md).
+  - The analysis for [Monday is available here](https://lauraem93.github.io/Project2/MondayAnalysis).
+  - The analysis for [Tuesday is available here](https://lauraem93.github.io/Project2/TuesdayAnalysis).
   - The analysis for [Wednesday is available
-    here](WednesdayAnalysis.md).
-  - The analysis for [Thursday is available here](ThursdayAnalysis.md).
-  - The analysis for [Friday is available here](FridayAnalysis.md).
-  - The analysis for [Saturday is available here](SaturdayAnalysis.md).
-  - The analysis for [Sunday is available here](SundayAnalysis.md).
+    here](https://lauraem93.github.io/Project2/WednesdayAnalysis).
+  - The analysis for [Thursday is available here](https://lauraem93.github.io/Project2/ThursdayAnalysis).
+  - The analysis for [Friday is available here](https://lauraem93.github.io/Project2/FridayAnalysis).
+  - The analysis for [Saturday is available here](https://lauraem93.github.io/Project2/SaturdayAnalysis).
+  - The analysis for [Sunday is available here](https://lauraem93.github.io/Project2/SundayAnalysis).
 
 # Packages Needed
 
