@@ -1,7 +1,7 @@
 Project 2
 ================
 Laura Mathews
-10/12/2020
+10/16/2020
 
 # Packages Needed
 
@@ -231,8 +231,6 @@ g + geom_point() + geom_smooth(method = lm, color = "orange") + labs(x = "Normal
     y = "Average Count", title = "Plot of Average Count vs Temperature")
 ```
 
-    ## `geom_smooth()` using formula 'y ~ x'
-
 ![](SundayAnalysis_files/figure-gfm/unnamed-chunk-6-4.png)<!-- -->
 
 ``` r
@@ -248,8 +246,6 @@ g <- ggplot(cnt_hum, aes(x = hum, y = avg))
 g + geom_point() + geom_smooth(method = lm) + labs(x = "Humidity", y = "Average Count", 
     title = "Plot of Average Count vs Humidity")
 ```
-
-    ## `geom_smooth()` using formula 'y ~ x'
 
 ![](SundayAnalysis_files/figure-gfm/unnamed-chunk-6-5.png)<!-- -->
 
