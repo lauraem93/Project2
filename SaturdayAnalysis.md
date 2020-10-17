@@ -7,6 +7,7 @@ Laura Mathews
 
 ``` r
 library(tidyverse)
+library(rmarkdown)
 library(tidyr)
 library(caret)
 library(ggplot2)
